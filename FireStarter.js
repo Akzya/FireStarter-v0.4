@@ -962,6 +962,8 @@ WallHack.process = function (localPlayer)
     }
 }
 
+
+
 let cheatMenuCode = `
 <div class="shizoval" id="shizoval_window">
 
@@ -1202,6 +1204,3 @@ requestAnimationFrame(mainEvent);
 
 console.clear();
 console.log("[FireStarter] The cheat has been loaded");
-
-
-
