@@ -581,13 +581,51 @@ class Clicker
 
 // clicker.c.js
 
-let autoMining = false
+
+let mines = false
 
 document.addEventListener('keyup', (e) =>
 {
     if (e.keyCode == 53 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
-        autoMining = !autoMining;
+        mines = !mines;
+    }
+})
+    let repair = false
+
+    document.addEventListener('keyup', (e) =>
+{
+    if (e.keyCode == 49 && Utils.isGameReady() && Utils.isNotOpenChat())
+    {
+        repair = !repair;
+    }
+})
+
+    let armor = false
+
+    document.addEventListener('keyup', (e) =>
+{
+        if (e.keyCode == 50 && Utils.isGameReady() && Utils.isNotOpenChat())
+    {
+        armor = !armor;
+    }
+})
+
+    let damage = false
+    document.addEventListener('keyup', (e) =>
+{
+    if (e.keyCode == 51 && Utils.isGameReady() && Utils.isNotOpenChat())
+    {
+        damage = !damage;
+    }
+})
+
+    let nitro = false
+    document.addEventListener('keyup', (e) =>
+{
+    if (e.keyCode == 52 && Utils.isGameReady() && Utils.isNotOpenChat())
+    {
+        nitro = !nitro;
     }
 })
 
@@ -633,22 +671,41 @@ Clicker.process = function (localPlayer)
         world.frameStartTime_0 -= 5000000;
     }
 
-    gameActions.at(6).at(1).wasPressed = true;
-    gameActions.at(6).at(1).wasReleased = true;
 
-    gameActions.at(7).at(1).wasPressed = true;
-    gameActions.at(7).at(1).wasReleased = true;
-
-    gameActions.at(8).at(1).wasPressed = true;
-    gameActions.at(8).at(1).wasReleased = true;
-
-    if (autoMining)
+    if (mines)
     {
         gameActions.at(9).at(1).wasPressed = true;
         gameActions.at(9).at(1).wasReleased = true;
+    }
+
+    if (repair)
+    {
         gameActions.at(5).at(1).wasPressed = true;
         gameActions.at(5).at(1).wasReleased = true;
     }
+
+
+    if (armor)
+    {
+    gameActions.at(6).at(1).wasPressed = true;
+    gameActions.at(6).at(1).wasReleased = true;
+    }
+
+
+    if (damage)
+    {
+    gameActions.at(7).at(1).wasPressed = true;
+    gameActions.at(7).at(1).wasReleased = true;
+    }
+
+
+    if (nitro)
+    {
+    gameActions.at(8).at(1).wasPressed = true;
+    gameActions.at(8).at(1).wasReleased = true;
+    }
+
+
 }
 
 // removeMines.h.js
@@ -992,16 +1049,67 @@ let cheatMenuCode = `
 		<center>FireStarter v0.4</center><hr>
 
 		<div id="gameStates" style="display: none;">
-			<p>AirWalk: <font id="airBreakStateColor" color="red"><label id="airBreakState">Off</label></font></p>
-			<p>AirWalk Speed: <font color="#0000ff"><label id="airBreakSpeed">100</label></font></p>
-			<p>Anti-Aim: <font id="antiAimStateColor" color="red"><label id="antiAimState">Off</label></font></p>
-			<p>OD Hack: <font id="autoMiningStateColor" color="red"><label id="autoMiningState">Off</label></font></p>
+			<p>AirWalk: <font id="airBreakStateColor" color="red"><label id="airBreakState">OFF</label></font></p>
+			<p>AirWalk Speed: <font color="#9500ff"><label id="airBreakSpeed">100</label></font></p>
+			<p>Anti-Aim: <font id="antiAimStateColor" color="red"><label id="antiAimState">OFF</label></font></p>
+			<p>Repair-Kits: <font id="repairStateColor" color="red"><label id="repairState">OFF</label></font></p>
+            <p>Boosted-Armor: <font id="armorStateColor" color="red"><label id="armorState">OFF</label></font></p>
+            <p>Boosted-Damage: <font id="damageStateColor" color="red"><label id="damageState">OFF</label></font></p>
+            <p>Speed-Boost: <font id="nitroStateColor" color="red"><label id="nitroState">OFF</label></font></p>
+            <p>Mines: <font id="minesStateColor" color="red"><label id="minesState">OFF</label></font></p>
 		</div>
 
 		<div id="infoWindow">
-			<p>Press Insert To Toggle UI</p>
+            <p>To Hide HotKeys Press 'Home'</p>
+			<p>Press 'Insert' To Toggle UI</p>
 			<p>Made By Akz</p>
 		</div>
+
+
+<div class="hotkeys" id="hotkey_window">
+
+	<style>
+        .hotkeys {
+            left: 1%;
+            top: 45%;
+            position: fixed;
+            z-index: 1000;
+            display: flex;
+        }
+
+        .hotkey__content {
+            padding: 15px;
+            background: #000001;
+            box-shadow: 0 5px 15px black;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            border-radius: 15px;
+        }
+	</style>
+
+	<div class="hotkey__content">
+		<center>FireStarter v0.4 HotKeys</center><hr>
+
+        <div id="hotkeysWindow" style="display: block;">
+        <p>AirWalk Toggle: Right Shift</p>
+        <p>AirWalk Height:</p>
+        <p>Q: Increase Height</p>
+        <p>E: Decrease Height</p>
+        <p>WASD: Drive, Use Mouse To Aim</p>
+        <p>AirWalk Speed:</p>
+        <p>Right Arrow: Increase Speed</p>
+        <p>Left Arrow: Decrease Speed</p>
+        <p>J: Anti-Aim Toggle</p>
+        <p>R: Explode Rockets</p>
+        <p>Supply Hotkeys:</p>
+        <p>1: Toggle Repairs</p>
+        <p>2: Toggle Armor</p>
+        <p>3: Toggle Damage</p>
+        <p>4: Toggle Nitro</p>
+        <p>5: Toggle Mines</p>
+        </div>
 
 	</div>
 
@@ -1017,6 +1125,21 @@ let cheatMenuCode = `
 				else
 				{
 					document.getElementById("shizoval_window").style.display = "none";
+				}
+			}
+		});
+
+        		document.addEventListener('keyup', function (event)
+		{
+			if (event.keyCode === 36)
+			{
+				if (document.getElementById("hotkey_window").style.display == "block")
+				{
+					document.getElementById("hotkey_window").style.display = "none";
+				}
+				else
+				{
+					document.getElementById("hotkey_window").style.display = "block";
 				}
 			}
 		});
@@ -1063,25 +1186,49 @@ CheatMenu.init = function ()
 
     clickerObj =
     {
-        autoMining:
+
+        repair:
         {
-            color: document.getElementById("autoMiningStateColor"),
-            label: document.getElementById("autoMiningState")
+            color: document.getElementById("repairStateColor"),
+            label: document.getElementById("repairState")
+        },
+
+        armor:
+        {
+            color: document.getElementById("armorStateColor"),
+            label: document.getElementById("armorState")
+        },
+
+        damage:
+        {
+            color: document.getElementById("damageStateColor"),
+            label: document.getElementById("damageState")
+        },
+
+        nitro:
+        {
+            color: document.getElementById("nitroStateColor"),
+            label: document.getElementById("nitroState")
+        },
+        mines:
+        {
+            color: document.getElementById("minesStateColor"),
+            label: document.getElementById("minesState")
         }
     };
 }
 
 CheatMenu.setStates = function ()
 {
-    if (airBreakObj.airBreakState.label.textContent == "Off" && airBreak.state == true)
+    if (airBreakObj.airBreakState.label.textContent == "OFF" && airBreak.state == true)
     {
-        airBreakObj.airBreakState.label.textContent = "On";
+        airBreakObj.airBreakState.label.textContent = "ON";
         airBreakObj.airBreakState.color.color = "green";
     }
 
-    if (airBreakObj.airBreakState.label.textContent == "On" && airBreak.state == false)
+    if (airBreakObj.airBreakState.label.textContent == "ON" && airBreak.state == false)
     {
-        airBreakObj.airBreakState.label.textContent = "Off";
+        airBreakObj.airBreakState.label.textContent = "OFF";
         airBreakObj.airBreakState.color.color = "red";
     }
 
@@ -1090,28 +1237,76 @@ CheatMenu.setStates = function ()
         airBreakObj.airBreakSpeed.label.textContent = airBreak.speed;
     }
 
-    if (airBreakObj.antiAimState.label.textContent == "Off" && airBreak.antiAim == true)
+    if (airBreakObj.antiAimState.label.textContent == "OFF" && airBreak.antiAim == true)
     {
-        airBreakObj.antiAimState.label.textContent = "On";
+        airBreakObj.antiAimState.label.textContent = "ON";
         airBreakObj.antiAimState.color.color = "green";
     }
 
-    if (airBreakObj.antiAimState.label.textContent == "On" && airBreak.antiAim == false)
+    if (airBreakObj.antiAimState.label.textContent == "ON" && airBreak.antiAim == false)
     {
-        airBreakObj.antiAimState.label.textContent = "Off";
+        airBreakObj.antiAimState.label.textContent = "OFF";
         airBreakObj.antiAimState.color.color = "red";
     }
 
-    if (clickerObj.autoMining.label.textContent == "Off" && autoMining == true)
+    if (clickerObj.repair.label.textContent == "OFF" && repair == true)
     {
-        clickerObj.autoMining.label.textContent = "On";
-        clickerObj.autoMining.color.color = "green";
+        clickerObj.repair.label.textContent = "ON";
+        clickerObj.repair.color.color = "green";
     }
 
-    if (clickerObj.autoMining.label.textContent == "On" && autoMining == false)
+    if (clickerObj.repair.label.textContent == "ON" && repair == false)
     {
-        clickerObj.autoMining.label.textContent = "Off";
-        clickerObj.autoMining.color.color = "red";
+        clickerObj.repair.label.textContent = "OFF";
+        clickerObj.repair.color.color = "red";
+    }
+
+    if (clickerObj.armor.label.textContent == "OFF" && armor == true)
+    {
+        clickerObj.armor.label.textContent = "ON";
+        clickerObj.armor.color.color = "green";
+    }
+
+    if (clickerObj.armor.label.textContent == "ON" && armor == false)
+    {
+        clickerObj.armor.label.textContent = "OFF";
+        clickerObj.armor.color.color = "red";
+    }
+
+    if (clickerObj.damage.label.textContent == "OFF" && damage == true)
+    {
+        clickerObj.damage.label.textContent = "ON";
+        clickerObj.damage.color.color = "green";
+    }
+
+    if (clickerObj.damage.label.textContent == "ON" && damage == false)
+    {
+        clickerObj.damage.label.textContent = "OFF";
+        clickerObj.damage.color.color = "red";
+    }
+
+    if (clickerObj.nitro.label.textContent == "OFF" && nitro == true)
+    {
+        clickerObj.nitro.label.textContent = "ON";
+        clickerObj.nitro.color.color = "green";
+    }
+
+    if (clickerObj.nitro.label.textContent == "ON" && nitro == false)
+    {
+        clickerObj.nitro.label.textContent = "OFF";
+        clickerObj.nitro.color.color = "red";
+    }
+
+    if (clickerObj.mines.label.textContent == "OFF" && mines == true)
+    {
+        clickerObj.mines.label.textContent = "ON";
+        clickerObj.mines.color.color = "green";
+    }
+
+    if (clickerObj.mines.label.textContent == "ON" && mines == false)
+    {
+        clickerObj.mines.label.textContent = "OFF";
+        clickerObj.mines.color.color = "red";
     }
 }
 
@@ -1139,7 +1334,8 @@ function reset()
         physicsComponent: null,
         healthComponent: null,
         camera: null,
-        strikerComponent: null
+        strikerComponent: null,
+
     };
 
     utilsObjects =
