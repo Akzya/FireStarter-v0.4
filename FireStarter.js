@@ -1,3 +1,5 @@
+// utils.h.js
+
 class Utils
 {
     getRootElement      = null; // args: void
@@ -582,9 +584,9 @@ class Clicker
 
     let repair = false
 
-    document.addEventListener('keyup', (e) =>
+    document.addEventListener('keydown', (r) =>
 {
-    if (e.keyCode == 49 && Utils.isGameReady() && Utils.isNotOpenChat())
+        if (r.keyCode == 49 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         repair = !repair;
     }
@@ -592,27 +594,27 @@ class Clicker
 
     let armor = false
 
-    document.addEventListener('keyup', (e) =>
+    document.addEventListener('keydown', (a) =>
 {
-        if (e.keyCode == 50 && Utils.isGameReady() && Utils.isNotOpenChat())
+        if (a.keyCode == 50 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         armor = !armor;
     }
 })
 
     let damage = false
-    document.addEventListener('keyup', (e) =>
+    document.addEventListener('keydown', (d) =>
 {
-    if (e.keyCode == 51 && Utils.isGameReady() && Utils.isNotOpenChat())
+    if (d.keyCode == 51 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         damage = !damage;
     }
 })
 
     let nitro = false
-    document.addEventListener('keyup', (e) =>
+    document.addEventListener('keydown', (n) =>
 {
-    if (e.keyCode == 52 && Utils.isGameReady() && Utils.isNotOpenChat())
+    if (n.keyCode == 52 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         nitro = !nitro;
     }
@@ -620,9 +622,9 @@ class Clicker
 
 let mines = false
 
-document.addEventListener('keyup', (e) =>
+document.addEventListener('keydown', (m) =>
 {
-    if (e.keyCode == 53 && Utils.isGameReady() && Utils.isNotOpenChat())
+    if (m.keyCode == 53 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         mines = !mines;
     }
@@ -1132,13 +1134,13 @@ let cheatMenuCode = `
 		{
 			if (evt.keyCode === 36)
 			{
-				if (document.getElementById("hotkey_window").style.display == "block")
+				if (document.getElementById("hotkey_window").style.display == "none")
 				{
-					document.getElementById("hotkey_window").style.display = "none";
+					document.getElementById("hotkey_window").style.display = "";
 				}
 				else
 				{
-					document.getElementById("hotkey_window").style.display = "block";
+					document.getElementById("hotkey_window").style.display = "non";
 				}
 			}
 		});
