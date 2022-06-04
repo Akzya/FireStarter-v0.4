@@ -1,5 +1,3 @@
-// utils.h.js
-
 class Utils
 {
     getRootElement      = null; // args: void
@@ -582,15 +580,6 @@ class Clicker
 // clicker.c.js
 
 
-let mines = false
-
-document.addEventListener('keyup', (e) =>
-{
-    if (e.keyCode == 53 && Utils.isGameReady() && Utils.isNotOpenChat())
-    {
-        mines = !mines;
-    }
-})
     let repair = false
 
     document.addEventListener('keyup', (e) =>
@@ -626,6 +615,16 @@ document.addEventListener('keyup', (e) =>
     if (e.keyCode == 52 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         nitro = !nitro;
+    }
+})
+
+let mines = false
+
+document.addEventListener('keyup', (e) =>
+{
+    if (e.keyCode == 53 && Utils.isGameReady() && Utils.isNotOpenChat())
+    {
+        mines = !mines;
     }
 })
 
