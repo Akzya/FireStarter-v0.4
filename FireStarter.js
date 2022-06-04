@@ -1093,7 +1093,7 @@ let cheatMenuCode = `
 	<div class="hotkey__content">
 		<center>FireStarter v0.4 HotKeys</center><hr>
 
-        <div id="hotkeysWindow" style="display: block;">
+        <div id="hotkeysWindow" style="display: none;">
         <p>AirWalk Toggle: Right Shift</p>
         <p>AirWalk Height:</p>
         <p>Q: Increase Height</p>
