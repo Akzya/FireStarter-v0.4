@@ -1,3 +1,5 @@
+// utils.h.js
+
 class Utils
 {
     getRootElement      = null; // args: void
@@ -582,7 +584,7 @@ class Clicker
 
     let repair = false
 
-    document.addEventListener('keydown', (r) =>
+    document.addEventListener('keyup', (r) =>
 {
         if (r.keyCode == 49 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
@@ -592,7 +594,7 @@ class Clicker
 
     let armor = false
 
-    document.addEventListener('keydown', (a) =>
+    document.addEventListener('keyup', (a) =>
 {
         if (a.keyCode == 50 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
@@ -601,7 +603,7 @@ class Clicker
 })
 
     let damage = false
-    document.addEventListener('keydown', (d) =>
+    document.addEventListener('keyup', (d) =>
 {
     if (d.keyCode == 51 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
@@ -610,7 +612,7 @@ class Clicker
 })
 
     let nitro = false
-    document.addEventListener('keydown', (n) =>
+    document.addEventListener('keyup', (n) =>
 {
     if (n.keyCode == 52 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
@@ -620,7 +622,7 @@ class Clicker
 
 let mines = false
 
-document.addEventListener('keydown', (m) =>
+document.addEventListener('keyup', (m) =>
 {
     if (m.keyCode == 53 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
