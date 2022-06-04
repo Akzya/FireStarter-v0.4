@@ -1,5 +1,3 @@
-// utils.h.js
-
 class Utils
 {
     getRootElement      = null; // args: void
@@ -1050,10 +1048,10 @@ let cheatMenuCode = `
 		<center>FireStarter v0.4</center><hr>
 
 		<div id="gameStates" style="display: none;">
-	    <p>AirWalk: <font id="airBreakStateColor" color="red"><label id="airBreakState">OFF</label></font></p>
-	    <p>AirWalk Speed: <font color="#9500ff"><label id="airBreakSpeed">100</label></font></p>
-            <p>Anti-Aim: <font id="antiAimStateColor" color="red"><label id="antiAimState">OFF</label></font></p>
-	    <p>Repair-Kits: <font id="repairStateColor" color="red"><label id="repairState">OFF</label></font></p>
+			<p>AirWalk: <font id="airBreakStateColor" color="red"><label id="airBreakState">OFF</label></font></p>
+			<p>AirWalk Speed: <font color="#9500ff"><label id="airBreakSpeed">100</label></font></p>
+			<p>Anti-Aim: <font id="antiAimStateColor" color="red"><label id="antiAimState">OFF</label></font></p>
+			<p>Repair-Kits: <font id="repairStateColor" color="red"><label id="repairState">OFF</label></font></p>
             <p>Boosted-Armor: <font id="armorStateColor" color="red"><label id="armorState">OFF</label></font></p>
             <p>Boosted-Damage: <font id="damageStateColor" color="red"><label id="damageState">OFF</label></font></p>
             <p>Speed-Boost: <font id="nitroStateColor" color="red"><label id="nitroState">OFF</label></font></p>
@@ -1093,7 +1091,7 @@ let cheatMenuCode = `
 	<div class="hotkey__content">
 		<center>FireStarter v0.4 HotKeys</center><hr>
 
-        <div id="hotkeysWindow" style="display: none;">
+        <div id="hotkeysWindow" style="display: block;">
         <p>AirWalk Toggle: Right Shift</p>
         <p>AirWalk Height:</p>
         <p>Q: Increase Height</p>
@@ -1134,13 +1132,13 @@ let cheatMenuCode = `
 		{
 			if (evt.keyCode === 36)
 			{
-				if (document.getElementById("hotkey_window").style.display == "none")
+				if (document.getElementById("hotkey_window").style.display == "block")
 				{
-					document.getElementById("hotkey_window").style.display = "";
+					document.getElementById("hotkey_window").style.display = "none";
 				}
 				else
 				{
-					document.getElementById("hotkey_window").style.display = "none";
+					document.getElementById("hotkey_window").style.display = "block";
 				}
 			}
 		});
