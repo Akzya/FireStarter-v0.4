@@ -584,18 +584,18 @@ class Clicker
 
 let mines = false
 
-document.addEventListener('keyup', (m) =>
+document.addEventListener('keyup', (e) =>
 {
-    if (m.keyCode == 53 && Utils.isGameReady() && Utils.isNotOpenChat())
+    if (e.keyCode == 53 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         mines = !mines;
     }
 })
     let repair = false
 
-    document.addEventListener('keyup', (r) =>
+    document.addEventListener('keyup', (e) =>
 {
-    if (r.keyCode == 49 && Utils.isGameReady() && Utils.isNotOpenChat())
+    if (e.keyCode == 49 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         repair = !repair;
     }
@@ -603,27 +603,27 @@ document.addEventListener('keyup', (m) =>
 
     let armor = false
 
-    document.addEventListener('keyup', (a) =>
+    document.addEventListener('keyup', (e) =>
 {
-        if (a.keyCode == 50 && Utils.isGameReady() && Utils.isNotOpenChat())
+        if (e.keyCode == 50 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         armor = !armor;
     }
 })
 
     let damage = false
-    document.addEventListener('keyup', (d) =>
+    document.addEventListener('keyup', (e) =>
 {
-    if (d.keyCode == 51 && Utils.isGameReady() && Utils.isNotOpenChat())
+    if (e.keyCode == 51 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         damage = !damage;
     }
 })
 
     let nitro = false
-    document.addEventListener('keyup', (n) =>
+    document.addEventListener('keyup', (e) =>
 {
-    if (n.keyCode == 52 && Utils.isGameReady() && Utils.isNotOpenChat())
+    if (e.keyCode == 52 && Utils.isGameReady() && Utils.isNotOpenChat())
     {
         nitro = !nitro;
     }
@@ -1129,9 +1129,9 @@ let cheatMenuCode = `
 			}
 		});
 
-        		document.addEventListener('keyup', function (event)
+        		document.addEventListener('keyup', function (evt)
 		{
-			if (event.keyCode === 36)
+			if (evt.keyCode === 36)
 			{
 				if (document.getElementById("hotkey_window").style.display == "block")
 				{
