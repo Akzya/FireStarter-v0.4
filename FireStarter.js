@@ -1140,7 +1140,7 @@ let cheatMenuCode = `
 				}
 				else
 				{
-					document.getElementById("hotkey_window").style.display = "non";
+					document.getElementById("hotkey_window").style.display = "none";
 				}
 			}
 		});
